@@ -8,7 +8,7 @@ PHP version 5.3+ with cURL
 
 ## egy/Oauth/Twitter.php
 
-Please see [egy.Oauth.Twitter.html](http://github.com/egy186/egy_Oauth_Twitter/blob/master/egy.Oauth.Twitter.html).
+Please see [egy.Oauth.Twitter.html](http://egy186.github.io/docs/php/egy.Oauth.Twitter.html).
 
 ## License
 

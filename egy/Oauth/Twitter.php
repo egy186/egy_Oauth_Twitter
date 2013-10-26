@@ -25,13 +25,13 @@ class Twitter {
 
 //region cURL Settings
     // Connect timeout
-    private $curl_connecttimeout = 30;
+    public $curl_connecttimeout = 30;
     // Timeout
-    private $curl_timeout = 30;
+    public $curl_timeout = 30;
     // User agent
     private $curl_user_agent = 'egy Oauth for Twitter v1.0.0a';
     // Verify SSL
-    private $curl_ssl_verifypeer = false;
+    public $curl_ssl_verifypeer = false;
 //endregion
 
 /**
@@ -192,7 +192,7 @@ class Twitter {
      * @param  array  $parameters
      * @return string $header ex. 'Authorization: OAuth oauth_...'
      */
-    public function generateAuthHead($url, $method, $parameters) {
+    private function generateAuthHead($url, $method, $parameters) {
         ksort($parameters);
         $signature = http_build_query($parameters, PHP_QUERY_RFC3986);
         $signature = $method . '&' . rawurlencode($url) . '&' . rawurlencode($signature);

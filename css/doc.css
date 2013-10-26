@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+header, hgroup, nav, footer, article, aside, section {
+    display: block;
+}
+
+html, body, header, hgroup, nav, footer, article, aside, section, div, p, img, table, caption, tbody, tfoot, thead, tr, th, td {
+    background: none repeat scroll 0% 0% transparent;
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+html {
+    text-align: left;
+}
+
+body {
+    background: #F5F5F5;
+    font-family: Verdana, sans-serif;
+    line-height: 1.2;
+}
+
+h1, h2 {
+    text-shadow: 0 2px 2px #FFF;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin: .25em 0 .5em;
+    padding: 0 0 .5em;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+small {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:link {
+        color: #03c;
+    }
+
+    a:visited {
+        color: #800080;
+    }
+
+    a:hover {
+        color: #F00;
+        text-decoration: underline;
+    }
+
+p, ul, ol, dl {
+    margin: 1em 0;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+}
+
+ul, ol {
+    padding: 0 0 0 2.25em;
+}
+
+li {
+    margin: .5em 0;
+}
+
+pre {
+    background: #DDD;
+    border-radius: 2px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, .5) inset;
+    overflow: auto;
+    padding: 8px;
+    font-family: Consolas, 'DejaVu Sans Mono', monospace;
+    font-size: inherit;
+}
+
+.i {
+    font-style: italic;
+}
+
+#page-head, #page-body, #page-foot {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#class_hierarchy dd {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+#page-head-nav {
+    margin: 10px 0;
+}
+
+    #page-head-nav h2 {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+
+    #page-head-nav ul, #page-head-nav li {
+        margin: 0;
+    }
+
+    #page-head-nav > ul > li {
+        display: table-cell;
+        width: .01%;
+    }
+
+    #page-head-nav a {
+        font-size: 12px;
+    }
+
+#page-body {
+    font-size: 16px;
+}
+
+    #page-body h2 {
+        border-bottom: 1px solid rgb(128, 128, 128);
+    }
+
+    #page-body > section {
+        border: 1px solid rgb(128, 128, 128);
+        margin: 20px -15px;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+
+#page-foot {
+    text-align: center;
+}

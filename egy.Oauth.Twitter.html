@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <script src="lib/syntaxhighlighter/shCore.js"></script>
+    <script src="lib/syntaxhighlighter/shBrushPhp.js"></script>
+    <link rel="stylesheet" href="css/doc.css" />
+    <link rel="stylesheet" href="lib/syntaxhighlighter/shCoreDefault.css" />
+    <script>
+        SyntaxHighlighter.defaults.gutter = false;
+        SyntaxHighlighter.all();
+    </script>
+</head>
+<body>
+    <header id="page-head">
+        <h1>Documentation</h1>
+        <dl id="class_hierarchy">
+            <dt>Class hierarchy</dt>
+            <dd>egy\Oauth\Twitter</dd>
+        </dl>
+        <nav id="page-head-nav">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li>
+                    <a href="#public_properties">Public properties</a>
+                    <ul>
+                        <li><a href="#curl_connecttimeout">$curl_connecttimeout</a></li>
+                        <li><a href="#curl_timeout">$curl_timeout</a></li>
+                        <li><a href="#curl_ssl_verifypeer">$curl_ssl_verifypeer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#private_properties">Private properties</a>
+                    <ul>
+                        <li><a href="#oauth_config">$oauth_config</a></li>
+                        <li><a href="#egy_info">$egy_info</a></li>
+                        <li><a href="#curl_user_agent">$curl_user_agent</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#public_methods">Public methods</a>
+                    <ul>
+                        <li><a href="#__construct">__construct()</a></li>
+                        <li><a href="#APIRequest">APIRequest()</a></li>
+                        <li><a href="#getRequestToken">getRequestToken()</a></li>
+                        <li><a href="#getOAuthToken">getOAuthToken()</a></li>
+                        <li><a href="#requestTokenURL">requestTokenURL()</a></li>
+                        <li><a href="#accessTokenURL">accessTokenURL()</a></li>
+                        <li><a href="#authorizeURL">authorizeURL()</a></li>
+                        <li><a href="#getInfo">getInfo()</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#public_methods">Private methods</a>
+                    <ul>
+                        <li><a href="#getToken">getToken()</a></li>
+                        <li><a href="#generateAuthHead">generateAuthHead()</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="page-body">
+        <section id="public_properties">
+            <h2>Public properties</h2>
+            <section id="curl_connecttimeout">
+                <h3>$curl_connecttimeout</h3>
+                <pre class="brush: php;">int $curl_connecttimeout</pre>
+                <p>Default: <span class="i">30</span></p>
+            </section>
+            <section id="curl_timeout">
+                <h3>$curl_timeout</h3>
+                <pre class="brush: php;">int $curl_timeout</pre>
+                <p>Default: <span class="i">30</span></p>
+            </section>
+            <section id="curl_ssl_verifypeer">
+                <h3>$curl_ssl_verifypeer</h3>
+                <pre class="brush: php;">bool $curl_ssl_verifypeer</pre>
+                <p>Default: <span class="i">false</span></p>
+            </section>
+        </section>
+        <section id="private_properties">
+            <h2>Private properties</h2>
+            <section id="oauth_config">
+                <h3>$oauth_config</h3>
+                <pre class="brush: php;">array $oauth_config</pre>
+                <dl>
+                    <dt>$oauth_config Keys</dt>
+                    <dd><code>consumer_key</code></dd>
+                    <dd><code>consumer_secret</code></dd>
+                    <dd><code>oauth_token</code></dd>
+                    <dd><code>oauth_token_secret</code></dd>
+                </dl>
+            </section>
+            <section id="egy_info">
+                <h3>$egy_info</h3>
+                <pre class="brush: php;">array $egy_info</pre>
+                <p>for debug</p>
+            </section>
+            <section id="curl_user_agent">
+                <h3>$curl_user_agent</h3>
+                <pre class="brush: php;">string $curl_user_agent</pre>
+                <p>Default: <span class="i">egy Oauth for Twitter</span></p>
+            </section>
+        </section>
+        <section id="public_methods">
+            <h2>Public methods</h2>
+            <section id="__construct">
+                <h3>__construct()</h3>
+                <pre class="brush: php;">void __construct(string $consumer_key, string $consumer_secret [, string $oauth_token = null [, string $oauth_token_secret = null]])</pre>
+            </section>
+            <section id="APIRequest">
+                <h3>APIRequest()</h3>
+                <pre class="brush: php;">string APIRequest(string $url, string $method [, array $parameters = array()])</pre>
+                <p>make Twitter API request</p>
+                <p>Return: Twitter response body with string</p>
+            </section>
+            <section id="getRequestToken">
+                <h3>getRequestToken()</h3>
+                <pre class="brush: php;">array getRequestToken(string $callbackURL)</pre>
+                <p>wrapper of getToken for getting request token</p>
+                <dl>
+                    <dt>Return Keys</dt>
+                    <dd><code>oauth_token</code></dd>
+                    <dd><code>oauth_token_secret</code></dd>
+                    <dd><code>oauth_callback_confirmed</code></dd>
+                </dl>
+            </section>
+            <section id="getOAuthToken">
+                <h3>getOAuthToken()</h3>
+                <pre class="brush: php;">array getOAuthToken(string $oauth_verifier)</pre>
+                <p>wrapper of getToken for getting oauth token</p>
+                <dl>
+                    <dt>Return Keys</dt>
+                    <dd><code>oauth_token</code></dd>
+                    <dd><code>oauth_token_secret</code></dd>
+                    <dd><code>user_id</code></dd>
+                    <dd><code>screen_name</code></dd>
+                </dl>
+            </section>
+            <section id="requestTokenURL">
+                <h3>requestTokenURL()</h3>
+                <pre class="brush: php;">string requestTokenURL()</pre>
+                <p>Return: Twitter request token URL</p>
+            </section>
+            <section id="accessTokenURL">
+                <h3>accessTokenURL()</h3>
+                <pre class="brush: php;">string accessTokenURL()</pre>
+                <p>Return: Twitter request token URL</p>
+            </section>
+            <section id="authorizeURL">
+                <h3>authorizeURL()</h3>
+                <pre class="brush: php;">string authorizeURL()</pre>
+                <p>Return: Twitter autheize URL</p>
+            </section>
+            <section id="getInfo">
+                <h3>getInfo()</h3>
+                <pre class="brush: php;">array getInfo()</pre>
+                <p>for debug</p>
+            </section>
+        </section>
+        <section id="private_methods">
+            <h2>Private methods</h2>
+            <section id="getToken">
+                <h3>getToken()</h3>
+                <pre class="brush: php;">array getToken(string $url [, array $parameters = array()])</pre>
+                <p>get token</p>
+            </section>
+            <section id="generateAuthHead">
+                <h3>generateAuthHead()</h3>
+                <pre class="brush: php;">string generateAuthHead(string $url, string $method, array $parameters)</pre>
+                <p>generate HTTP header ex. <span class="i">'Authorization Oauth oauth_...'</span></p>
+            </section>
+        </section>
+    </div>
+    <footer id="page-foot">
+        <p><small>Copyright (c) 2013 egy186</small></p>
+    </footer>
+</body>
+</html>

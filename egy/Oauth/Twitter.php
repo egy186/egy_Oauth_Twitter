@@ -225,7 +225,7 @@ class Twitter {
      * @return array
      */
     public function getInfo() {
-        return $egy_info;
+        return $this->egy_info;
     }
 //endregion
 }
